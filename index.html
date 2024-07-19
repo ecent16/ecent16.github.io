@@ -11,14 +11,14 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          parseCSVFile(fileInput.files);
+          parseCSVFile(fileInput.files[0]);
         } 
         else { return false; }
       }
   
       const parseCSVFile = (csvFile) => {
         
-        const fileName = csvFile[0].name;
+        const fileName = csvFile.name;
         const fileExtension = fileName.split('.')[1].toLowerCase();
 
         if(csvFile && fileExtension === 'csv') {
