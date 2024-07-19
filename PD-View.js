@@ -4,7 +4,8 @@ const eventHandler = () => {
   fileInput.addEventListener('change', () => {
     if(fileInput !== null || fileInput.files.length > 0) {
       populateTable(fileInput)
-    }
+    } 
+    else { return false; }
   }
   
 }
