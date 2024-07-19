@@ -1,4 +1,8 @@
 
+$( document ).ready(() => {
+  eventHandler();
+});
+
 const eventHandler = () => {
   const fileInput = document.getElementById('fileInput');
   fileInput.addEventListener('change', () => {
