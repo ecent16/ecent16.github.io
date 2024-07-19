@@ -11,7 +11,8 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          parseCSVFile(fileInput.files[0]);
+          const parseFile = parseCSVFile(fileInput.files[0]);
+          console.log(parseFile);
         } 
         else { return false; }
       }
@@ -23,13 +24,14 @@
 
         if(csvFile && fileExtension === 'csv') {
           const reader = new FileReader();
+          let txt;
           
           reader.onload = (e) => {
-            const txt = e.target.result;
-            console.log(txt);
+            txt = e.target.result;
             document.write(txt);
           }
           reader.readAsText(csvFile);
+          return txt;
         }
         else { return; }
       }
