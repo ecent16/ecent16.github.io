@@ -1,14 +1,14 @@
 
 const eventHandler = () => {
-   const fileInput = document.getElementById('fileInput');
+  const fileInput = document.getElementById('fileInput');
   fileInput.addEventListener('change', () => {
     if(fileInput !== null || fileInput.files.length > 0) {
       populateTable(fileInput)
     } 
     else { return false; }
-  }
-  
-}
+  });
+
+};
 
 const populateTable = (file) => {
   // 
