@@ -8,7 +8,7 @@ const loadCSVFile = (fileName) => {
       const txt = e.target.result;
       document.write(txt);
     }
-    reader.readAsText(fileName);
+    return reader.readAsText(fileName);
   }
   else { return false; }
 }
