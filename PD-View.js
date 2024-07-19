@@ -1,14 +1,18 @@
 
-const populateTable = (csvData) => {
-  // 
-  const table = document.getElementById('mainTable');
-  const fileInput = document.getElementById('fileInput');
-
+const eventHandler = () => {
+   const fileInput = document.getElementById('fileInput');
   fileInput.addEventListener('change', () => {
     if(fileInput !== null || fileInput.files.length > 0) {
-      const csvFile = parseCSVFile(fileInput);
-      console.log(csvFile);
+      populateTable(fileInput)
     }
-    else { return; }
-  });
+  }
+  
+}
+
+const populateTable = (file) => {
+  // 
+  const table = document.getElementById('mainTable');
+  const parsedFile = parseCSVFile(file);
+  console.log(csvFile);
+
 }
