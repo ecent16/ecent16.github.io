@@ -12,13 +12,13 @@
         
         if(fileInput !== null || fileInput.files.length > 0) {
           console.log(fileInput.files);
-          // parseCSVFile(fileInput);
+          parseCSVFile(fileInput.files);
         } 
         else { return false; }
       }
   
       const parseCSVFile = (csvFile) => {
-        const fileExtension = csvFile.split('.')[1].toLowerCase();
+        const fileExtension = csvFile.name.split('.')[1].toLowerCase();
         if(csvFile && fileExtension !== 'csv') {
           const reader = new FileReader();
           
