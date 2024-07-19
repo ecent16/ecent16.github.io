@@ -21,7 +21,7 @@
         const fileName = csvFile[0].name;
         const fileExtension = fileName.split('.')[1].toLowerCase();
 
-        if(csvFile && fileExtension !== 'csv') {
+        if(csvFile && fileExtension === 'csv') {
           const reader = new FileReader();
           
           reader.onload = (e) => {
