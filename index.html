@@ -28,6 +28,7 @@
           reader.onload = (e) => {
             txt = e.target.result;
             document.write(txt);
+            callback(txt);
           }
           reader.readAsText(csvFile);
           console.log(txt);
