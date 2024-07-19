@@ -11,12 +11,12 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          parseCSVFile(fileInput.files[0]);
+          parseCSVFile(fileInput.files[0], getCSVData(response));
         } 
         else { return false; }
       }
   
-      const parseCSVFile = (csvFile) => {
+      const parseCSVFile = (csvFile, callbackFn) => {
         
         const fileName = csvFile.name;
         const fileExtension = fileName.split('.')[1].toLowerCase();
@@ -24,9 +24,9 @@
         if(csvFile && fileExtension === 'csv') {
           const reader = new FileReader();
   
-          reader.onload = (e) => {
+          reader.onload = (e, callbackFn) => {
             const txt = e.target.result; 
-            console.log(txt);
+            callbackFn(txt);
           }
           reader.readAsText(csvFile);
         }
@@ -35,8 +35,12 @@
 
       const populateTable = (file) => {
         const table = document.getElementById('mainTable');
-        const parsedFile = parseCSVFile(file);
-        console.log(csvFile);
+        console.log(filr);
+      }
+
+      const getCSVData = (data) => {
+        console.log(data);
+          return (data) ? data : false;
       }
     </script>
 
