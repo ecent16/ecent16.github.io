@@ -11,13 +11,15 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          console.log(fileInput[0].files);
-          parseCSVFile(fileInput[0].files);
+          parseCSVFile(fileInput.files);
         } 
         else { return false; }
       }
   
       const parseCSVFile = (csvFile) => {
+        console.log(csvFile);
+        console.log(csvFile.name);
+        /*
         const fileExtension = csvFile.name.split('.')[1].toLowerCase();
         if(csvFile && fileExtension !== 'csv') {
           const reader = new FileReader();
@@ -29,6 +31,7 @@
           console.log(reader.readAsText(csvFile));
         }
         else { return; }
+        */
       }
 
       const populateTable = (file) => {
