@@ -5,15 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications Site</title>
     <link rel="stylesheet" href="PD-CSS.css">
+
+    <script>
+      const eventHandler = () => {
+        const fileInput = document.getElementById('fileInput'); 
+        console.log('Click event');
+        if(fileInput !== null || fileInput.files.length > 0) {
+          populateTable(fileInput)
+        } 
+        else { return false; }
+      }
+  
+      const parseCSVFile = (csvFile) => {
+        const fileExtension = csvFile.split('.')[1].toLowerCase();
+        if(csvFile && fileExtension !== 'csv') {
+          const reader = new FileReader();
+          
+          reader.onload = (e) => {
+            const txt = e.target.result;
+            document.write(txt);
+          }
+          return reader.readAsText(csvFile);
+        }
+        else { return; }
+      }
+
+      const populateTable = (file) => {
+        const table = document.getElementById('mainTable');
+        const parsedFile = parseCSVFile(file);
+        console.log(csvFile);
+      }
+    </script>
+
   </head>
   <body class="pad-1">
-    <input type="file" id="fileInput">
+    <input type="file" id="fileInput" onchange="eventHandler()">
     <div id="tableContainer">
       <table id="mainTable"></table>
     </div>
     
   </body>
 
-  <script scr="CSV.js"></script>
-  <script scr="PD-View.js"></script>
 </html>
