@@ -11,7 +11,7 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          console.log(fileInput.files);
+          console.log(fileInput.files.name);
           parseCSVFile(fileInput.files);
         } 
         else { return false; }
