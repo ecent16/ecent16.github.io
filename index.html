@@ -17,10 +17,10 @@
       }
   
       const parseCSVFile = (csvFile) => {
-        console.log(csvFile);
-        console.log(csvFile[0].name);
-        /*
-        const fileExtension = csvFile.name.split('.')[1].toLowerCase();
+        
+        const fileName = csvFile[0].name;
+        const fileExtension = fileName.split('.')[1].toLowerCase();
+
         if(csvFile && fileExtension !== 'csv') {
           const reader = new FileReader();
           
@@ -31,7 +31,6 @@
           console.log(reader.readAsText(csvFile));
         }
         else { return; }
-        */
       }
 
       const populateTable = (file) => {
