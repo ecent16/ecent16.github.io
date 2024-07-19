@@ -5,3 +5,12 @@
 .pad-2 {
     padding: 8px;
 }
+
+.pad-3 {
+    padding: 16px;
+}
+
+.sidePad-1 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
