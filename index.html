@@ -11,8 +11,7 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          const parseFile = parseCSVFile(fileInput.files[0]);
-          console.log(parseFile);
+          parseCSVFile(fileInput.files[0]);
         } 
         else { return false; }
       }
@@ -29,9 +28,9 @@
           reader.onload = (e) => {
             txt = e.target.result;
             document.write(txt);
+            console.log(txt);
           }
           reader.readAsText(csvFile);
-          return txt;
         }
         else { return; }
       }
