@@ -9,11 +9,8 @@ const parseCSVFile = (csvFile) => {
       const txt = e.target.result;
       document.write(txt);
     }
-    reader.readAsText(csvFile);
+    return reader.readAsText(csvFile);
   }
   else { return; }
 }
 
-const createTable = (textData) => {
-  const delimiter = ',', newLine = '\n';
-}
