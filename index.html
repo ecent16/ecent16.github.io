@@ -23,15 +23,13 @@
 
         if(csvFile && fileExtension === 'csv') {
           const reader = new FileReader();
-          let txt;
-          
+          let savedTxt;
           reader.onload = (e) => {
-            txt = e.target.result;
-            document.write(txt);
-            callback(txt);
+            const txt = e.target.result;
+            savedTxt = txt;
           }
           reader.readAsText(csvFile);
-          console.log(txt);
+          console.log(savedTxt);
         }
         else { return; }
       }
