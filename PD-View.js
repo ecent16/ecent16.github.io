@@ -6,8 +6,8 @@ const populateTable = (csvData) => {
 
   fileInput.addEventListener('change', () => {
     if(fileInput !== null || fileInput.files.length > 0) {
-      
-      
+      const csvFile = parseCSVFile(fileInput);
+      console.log(csvFile);
     }
     else { return; }
   });
