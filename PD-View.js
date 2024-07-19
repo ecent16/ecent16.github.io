@@ -1,11 +1,12 @@
 
-$( document ).ready(() => {
+$(document).ready(() => {
   eventHandler();
 });
 
 const eventHandler = () => {
   const fileInput = document.getElementById('fileInput');
   fileInput.addEventListener('change', () => {
+    console.log('Click event');
     if(fileInput !== null || fileInput.files.length > 0) {
       populateTable(fileInput)
     } 
