@@ -20,7 +20,13 @@
       }
   
       const parseCSVFile = (csvFile, callbackFn) => {
-        
+        // Function for parsing a csv file, utilizing a custom callback function to use the csv data:
+        /* Syntax:
+          parseCSVFile(fileInput.files[0], function(e) {
+            const result = e.target.result;
+            console.log(result);
+          });
+        */
         const fileName = csvFile.name;
         const fileExtension = fileName.split('.')[1].toLowerCase();
 
