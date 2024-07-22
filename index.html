@@ -27,7 +27,7 @@
         if(csvFile && fileExtension === 'csv') {
           const reader = new FileReader();
   
-          reader.onload = callbackfn;
+          reader.onload = callbackFn;
           reader.readAsText(csvFile);
         }
         else { return; }
