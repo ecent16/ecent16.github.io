@@ -11,10 +11,10 @@
         const fileInput = document.getElementById('fileInput'); 
         
         if(fileInput !== null || fileInput.files.length > 0) {
-          const fileData = parseCSVFile(fileInput.files[0], function(e) {
-            return e.target.result;
+          parseCSVFile(fileInput.files[0], function(e) {
+            const result = e.target.result;
+            console.log(result);
           });
-          console.log(fileData);
         } 
         else { return false; }
       }
